@@ -1,0 +1,91 @@
+/* Основні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Шапка сайту */
+.header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Меню навігації */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #005bb5;
+    padding: 10px 0;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+.navbar a:hover {
+    background-color: #003f7f;
+    border-radius: 5px;
+}
+
+/* Контейнер товарів */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.product {
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    border-radius: 5px;
+}
+.product h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.product p {
+    font-size: 16px;
+    color: #555;
+}
+.product .price {
+    font-size: 18px;
+    color: #0073e6;
+    font-weight: bold;
+}
+.product button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.product button:hover {
+    background-color: #005bb5;
+}
+
+/* Підвал сайту */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}

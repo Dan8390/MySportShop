@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Додати одяг
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Додавання одягу</h2>
+    <form method="POST">
+        <input type="text" name="title" id="title"><br>
+        <input type="number" name="price" id="price"><br>
+        <input type="text" name="country" id="country"><br>
+        <button type="submit">Зберегти</button>
+    </form>
+</div>
+{% endblock %}
