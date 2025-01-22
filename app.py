@@ -46,6 +46,12 @@ def clothes():
     return render_template("clothes_a.html", products=products)
 
 
+@app.route("/orders")
+def show_orders():
+    orders = Order.query.all()
+    return render_template("orders.html", orders=orders)
+
+
 @app.route('/clothes/create', methods=['POST', 'GET'])
 def create_clothes():
     if request.method == "POST":
@@ -63,6 +69,26 @@ def create_clothes():
             return "Помилка при додаванні статті"
     else:
         return render_template("product_create.html")
+
+
+@app.route("/orders/create", methods=['POST', 'GET'])
+def create_order():
+    if request.method == "POST":
+        tracker_code = request.form['tracker_code']
+        goods = request.form['goods']
+        client_phone = request.form['client_phone']
+        date = datetime.fromisoformat(request.form['date'])
+
+        new_order = Order(tracker_code=tracker_code, goods=goods, client_phone=client_phone, date=date)
+
+        try:
+            db.session.add(new_order)
+            db.session.commit()
+            return redirect("/")
+        except:
+            return "Помилка при додаванні замовлення"
+    else:
+        return render_template("order_create.html")
 
 
 if __name__ == "__main__":

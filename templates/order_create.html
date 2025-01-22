@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Додати замовлення
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Додавання замовлення</h2>
+    <form method="POST">
+        <input type="number" name="tracker_code" id="tracker_code"><br>
+        <input type="text" name="goods" id="goods"><br>
+        <input type="text" name="client_phone" id="client_phone"><br>
+        <input type="datetime-local" name="date" id="date"><br>
+        <button type="submit">Створити</button>
+    </form>
+</div>
+{% endblock %}
