@@ -12,12 +12,10 @@
 <br>
 {% for el in products %}
 <div>
-    <h5>Назва: {{ el.title }}</h5>
-    <h5>Ціна: {{ el.price }}</h5>
-    <h5>Країна: {{ el.country }}</h5>
+    <h5>{{ el.title }}</h5>
     {% set product = el %}
     {% block button scoped %}
-    <button>Детальніше</button>
+    <a href="products/{{product.id}}">Детальніше</a>
     {% endblock %}
 </div>
 <br>

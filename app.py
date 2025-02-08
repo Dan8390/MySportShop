@@ -105,6 +105,12 @@ def show_clients():
     return render_template("clients.html", clients=clients)
 
 
+@app.route("/clients/<int:client_id>")
+def client_detail_view(client_id):
+    client = Client.query.get_or_404(client_id)
+    return render_template("client_detail_view.html", client=client)
+
+
 @app.route("/<int:id>/buy")
 def buy(id):
     client = Client.query.get_or_404(id)
@@ -133,6 +139,12 @@ def create_product():
             return "Помилка при додаванні товару"
     else:
         return render_template("product_create.html")
+
+
+@app.route("/products/<int:product_id>")
+def product_detail_view(product_id):
+    product = Product.query.get_or_404(product_id)
+    return render_template("product_detail_view.html", product=product)
 
 
 @app.route("/orders")
