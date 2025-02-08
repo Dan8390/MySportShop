@@ -6,18 +6,21 @@
 
 {% block content %}
 <h1>Меню одягу</h1>
+
 {% block add %}
 <a href="product/create">Додати одяг</a>
 {% endblock %}
-<br>
+<br><br>
+
 {% for el in products %}
+
+{% set product = el %} {# Передаємо el у змінну product #}
+{% block product scoped %}
 <div>
     <h5>{{ el.title }}</h5>
-    {% set product = el %}
-    {% block button scoped %}
     <a href="products/{{product.id}}">Детальніше</a>
-    {% endblock %}
 </div>
+{% endblock %}
 <br>
 {% endfor %}
 
