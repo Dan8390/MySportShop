@@ -1,0 +1,11 @@
+{% extends 'product_a.html' %}
+
+{% block add %}{% endblock %}
+
+{% block button scoped %}
+    <a href="{{ id }}/buy/{{ product.id }}">Купити</a>
+{% endblock %}
+
+<form method="POST">
+    <button type="submit">Оформити замовлення</button>
+</form>

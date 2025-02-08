@@ -1,0 +1,22 @@
+{% extends 'product_a.html' %}
+
+{% block title %}
+Клієнти
+{% endblock %}
+
+{% block content %}
+<h1>Всі клієнти</h1>
+
+{% for el in clients %}
+<div>
+    <h5>Ім'я: {{ el.name }}</h5>
+    <h5>Прізвище: {{ el.surname }}</h5>
+    <h5>Номер телефону: {{ el.phone }}</h5>
+    <h5>Електронна пошта: {{ el.email }}</h5>
+    <h5>Пароль: {{ el.password }}</h5>
+    <button>Детальніше</button>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

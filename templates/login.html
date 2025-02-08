@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Логін
+{% endblock %}
+
+{% block content %}
+
+<h1>Вхід</h1>
+<a href="registration">Зареєструватися</a>
+    <form method="POST">
+        <p>Логін:</p>
+        <input required type="text" name="login" id="login"><br><br>
+        <p>Пароль:</p>
+        <input required type="text" name="password" id="password"><br><br>
+        <button type="submit">Увійти</button>
+    </form>
+{% endblock %}

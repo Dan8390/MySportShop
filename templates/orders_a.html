@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Замовлення
+{% endblock %}
+
+{% block content %}
+<h3>Всі замовлення</h3>
+
+{% for el in orders %}
+<div>
+    <h5>Трекер замовлення: {{ el.tracker_code }}</h5>
+    <h5>Товари: {{ el.goods }}</h5>
+    <h5>Номер телефону клієнта: {{ el.client_phone }}</h5>
+    <h5>Дата замовлення: {{ el.date }}</h5>
+    <button>Детальніше</button>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

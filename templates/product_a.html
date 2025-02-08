@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Одяг
+{% endblock %}
+
+{% block content %}
+<h1>Меню одягу</h1>
+{% block add %}
+<a href="product/create">Додати одяг</a>
+{% endblock %}
+<br>
+{% for el in products %}
+<div>
+    <h5>Назва: {{ el.title }}</h5>
+    <h5>Ціна: {{ el.price }}</h5>
+    <h5>Країна: {{ el.country }}</h5>
+    {% set product = el %}
+    {% block button scoped %}
+    <button>Детальніше</button>
+    {% endblock %}
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

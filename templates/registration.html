@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Реєстрація
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Реєстрація</h1>
+    <form method="POST">
+        <p>Ім'я:</p>
+        <input required type="text" name="name" id="name"><br><br>
+        <p>Прізвище:</p>
+        <input required type="text" name="surname" id="surname"><br><br>
+        <p>Номер телефону:</p>
+        <input required type="text" name="phone" id="phone"><br><br>
+        <p>Електронна пошта:</p>
+        <input required type="text" name="email" id="email"><br><br>
+        <p>Пароль:</p>
+        <input required type="text" name="password" id="password"><br><br>
+
+        <button type="submit">Зберегти</button>
+    </form>
+</div>
+{% endblock %}

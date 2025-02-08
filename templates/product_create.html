@@ -6,11 +6,14 @@
 
 {% block content %}
 <div>
-    <h2>Додавання одягу</h2>
+    <h1>Додавання одягу</h1>
     <form method="POST">
-        <input type="text" name="title" id="title"><br>
-        <input type="number" name="price" id="price"><br>
-        <input type="text" name="country" id="country"><br>
+        <p>Назва товару:</p>
+        <input required type="text" name="title" id="title"><br><br>
+        <p>Ціна:</p>
+        <input required type="number" name="price" id="price"><br><br>
+        <p>Країна:</p>
+        <input required type="text" name="country" id="country"><br><br>
         <button type="submit">Зберегти</button>
     </form>
 </div>

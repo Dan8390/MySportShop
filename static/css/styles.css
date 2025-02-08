@@ -7,6 +7,10 @@ body {
     color: #333;
 }
 
+h1 {
+    text-align: center;
+}
+
 /* Шапка сайту */
 .header {
     background-color: #0073e6;
