@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Оновлення інформації про клієнта
+{% endblock %}
+
+{% block content %}
+<h1>Оновлення інформації про клієнта</h1>
+{% block add %}
+
+{% endblock %}
+<br>
+<div>
+    <form method="post">
+        <p>Ім'я:</p>
+        <input type="text" name="name" id="name" value="{{ client.name }}" placeholder="Введіть ім'я"><br>
+        <p>Прізвище:</p>
+        <input type="text" name="surname" id="surname" value="{{ client.surname }}" placeholder="Введіть прізвище"><br>
+        <p>Номер телефону:</p>
+        <input type="text" name="phone" id="phone" value="{{ client.phone }}" placeholder="Введіть номер телефону"><br><br>
+        <input type="submit" value="Оновити">
+    </form>
+</div>
+<br>
+
+{% endblock %}

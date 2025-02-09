@@ -111,6 +111,22 @@ def client_detail_view(client_id):
     return render_template("client_detail_view.html", client=client)
 
 
+@app.route("/clients/<int:client_id>/update", methods=["POST", "GET"])
+def client_update(client_id):
+    client = Client.query.get(client_id)
+    if request.method == "POST":
+        client.name = request.form['name']
+        client.surname = request.form['surname']
+        client.phone = request.form['phone']
+        try:
+            db.session.commit()
+            return redirect('/clients')
+        except:
+            return "Сталася помилка редагування даних клієнта"
+    else:
+        return render_template("client_update.html", client=client)
+
+
 @app.route("/clients/<int:client_id>/delete", methods=['POST', 'GET'])
 def client_delete(client_id):
     client = Client.query.get(client_id)
