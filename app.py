@@ -138,6 +138,17 @@ def client_delete(client_id):
         return "Сталася помилка видалення клієнта"
 
 
+@app.route("/clients/<int:client_id>/reset_password")
+def client_reset_password(client_id):
+    client = Client.query.get(client_id)
+    try:
+        client.password = compute_sha512_hash("1234")
+        db.session.commit()
+        return redirect('/clients')
+    except:
+        return "Сталася помилка при скиданні паролю"
+
+
 @app.route("/<int:c_id>/buy/<int:p_id>")
 def buy(c_id, p_id):
     client = Client.query.get_or_404(c_id)
