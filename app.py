@@ -127,6 +127,15 @@ def show_cart(id):
     return render_template("cart.html", cart=client_cart, id=client.id)
 
 
+@app.route("/<int:id>/buy/finish")
+def finish(id):
+    client = Client.query.get_or_404(id)
+    client.cart = ""
+    db.session.commit()
+    products = Product.query.all()
+    return render_template("product_u.html", products=products, id=client.id)
+
+
 @app.route("/products")
 def show_products():
     products = Product.query.all()
