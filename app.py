@@ -167,6 +167,22 @@ def product_detail_view(product_id):
     return render_template("product_detail_view.html", product=product)
 
 
+@app.route("/products/<int:product_id>/update", methods=["POST", "GET"])
+def product_update(product_id):
+    product = Product.query.get(product_id)
+    if request.method == "POST":
+        product.title = request.form['title']
+        product.price = request.form['price']
+        product.country = request.form['country']
+        try:
+            db.session.commit()
+            return redirect('/products')
+        except:
+            return "Сталася помилка редагування"
+    else:
+        return render_template("product_update.html", product=product)
+
+
 @app.route("/orders")
 def show_orders():
     orders = Order.query.all()
