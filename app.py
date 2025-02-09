@@ -111,6 +111,17 @@ def client_detail_view(client_id):
     return render_template("client_detail_view.html", client=client)
 
 
+@app.route("/clients/<int:client_id>/delete", methods=['POST', 'GET'])
+def client_delete(client_id):
+    client = Client.query.get(client_id)
+    try:
+        db.session.delete(client)
+        db.session.commit()
+        return redirect('/clients')
+    except:
+        return "Сталася помилка видалення клієнта"
+
+
 @app.route("/<int:c_id>/buy/<int:p_id>")
 def buy(c_id, p_id):
     client = Client.query.get_or_404(c_id)
