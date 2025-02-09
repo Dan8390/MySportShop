@@ -17,7 +17,7 @@
 {% set product = el %} {# Передаємо el у змінну product #}
 {% block product scoped %}
 <div>
-    <h5>{{ el.title }}</h5>
+    <h2>{{ el.title }}</h2>
     <a href="products/{{product.id}}">Детальніше</a>
 </div>
 {% endblock %}

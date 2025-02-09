@@ -8,11 +8,11 @@
 <h1>Про клієнта</h1>
 
 <div>
-    <h5>Ім'я: {{ client.name }}</h5>
-    <h5>Прізвище: {{ client.surname }}</h5>
-    <h5>Номер телефону: {{ client.phone }}</h5>
-    <h5>Електронна пошта: {{ client.email }}</h5>
-    <h5>Пароль: {{ client.password }}</h5>
+    <h2>Ім'я: {{ client.name }}</h2>
+    <p>Прізвище: {{ client.surname }}</p>
+    <p>Номер телефону: {{ client.phone }}</p>
+    <p>Електронна пошта: {{ client.email }}</p>
+    <p>Пароль: {{ client.password }}</p>
     <a href="{{client.id}}/update">Оновити дані клієнта</a><br><br>
     <a href="{{client.id}}/delete">Видалити акаунт</a>
 </div>

@@ -9,8 +9,8 @@
 
 {% for el in clients %}
 <div>
-    <h5>Ім'я: {{ el.name }}</h5>
-    <h5>Прізвище: {{ el.surname }}</h5>
+    <h2>Ім'я: {{ el.name }}</h2>
+    <h2>Прізвище: {{ el.surname }}</h2>
     {% set client = el %}
     <a href="clients/{{client.id}}">Детальніше</a>
 </div>

@@ -163,7 +163,7 @@ def create_product():
 
 @app.route("/products/<int:product_id>")
 def product_detail_view(product_id):
-    product = Product.query.get_or_404(product_id)
+    product = Product.query.get(product_id)
     return render_template("product_detail_view.html", product=product)
 
 
