@@ -178,9 +178,20 @@ def product_update(product_id):
             db.session.commit()
             return redirect('/products')
         except:
-            return "Сталася помилка редагування"
+            return "Сталася помилка редагування даних товару"
     else:
         return render_template("product_update.html", product=product)
+
+
+@app.route("/products/<int:product_id>/delete", methods=['POST', 'GET'])
+def product_delete(product_id):
+    product = Product.query.get(product_id)
+    try:
+        db.session.delete(product)
+        db.session.commit()
+        return redirect('/products')
+    except:
+        return "Сталася помилка видалення товару"
 
 
 @app.route("/orders")
