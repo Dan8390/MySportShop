@@ -1,13 +1,15 @@
 {% extends 'product_a.html' %}
 
-{% block add %}{% endblock %}
+{% block add %}
+    <a href="{{ c_id }}/cart">До кошика</a>
+{% endblock %}
 
 {% block product scoped %}
     <div>
         <h5>{{ product.title }}</h5>
         <h5>Ціна: {{ product.price }}</h5>
         <h5>Країна: {{ product.country }}</h5>
-        <a href="{{ id }}/buy/{{ product.id }}">Купити</a>
+        <a href="{{ c_id }}/buy/{{ product.id }}">Купити</a>
     </div>
     <br>
 {% endblock %}

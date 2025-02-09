@@ -71,7 +71,7 @@ def login():
             return render_template("welcome_page.html")
         else:
             products = Product.query.all()
-            return render_template("product_u.html", products=products, id=found_user.id)
+            return render_template("product_u.html", products=products, c_id=found_user.id)
     else:
         return render_template("login.html")
 
@@ -111,9 +111,20 @@ def client_detail_view(client_id):
     return render_template("client_detail_view.html", client=client)
 
 
-@app.route("/<int:id>/buy")
-def buy(id):
+@app.route("/<int:c_id>/buy/<int:p_id>")
+def buy(c_id, p_id):
+    client = Client.query.get_or_404(c_id)
+    client.cart += Product.query.get_or_404(p_id).title + " "
+    db.session.commit()
+    products = Product.query.all()
+    return render_template("product_u.html", products=products, id=client.id)
+
+
+@app.route("/<int:id>/cart")
+def show_cart(id):
     client = Client.query.get_or_404(id)
+    client_cart = client.cart
+    return render_template("cart.html", cart=client_cart, id=client.id)
 
 
 @app.route("/products")
